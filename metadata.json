@@ -1,0 +1,7 @@
+{
+  "name": "skin",
+  "description": "Concept E-commerce: Wardrobe as an Alter-Ego. A digital gallery where fashion meets art.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
