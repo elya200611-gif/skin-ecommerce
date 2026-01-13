@@ -33,7 +33,7 @@ export default function HomePage({
                 {/* Background "Video" Loop (Simulated) */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="https://picsum.photos/id/403/1920/1080"
+                        src="/hero.webp"
                         className="w-full h-full object-cover opacity-80 mix-blend-multiply grayscale hover:grayscale-0 transition-all duration-[2s]"
                         alt="Hero Texture"
                     />

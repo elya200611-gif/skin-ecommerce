@@ -56,9 +56,7 @@ const Header = ({
 
                     {/* Logo */}
                     <div className="flex-shrink-0 flex items-center">
-                        <a href="/" className="text-3xl font-serif italic font-bold tracking-tighter text-skin-dark">
-                            skin
-                        </a>
+                        <img src="/logo.webp" alt="Logo" className="w-24 h-24" />
                     </div>
 
                     {/* Desktop Navigation */}
