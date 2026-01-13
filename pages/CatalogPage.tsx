@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
-import { products } from '../constants'; // Ensure this path is correct relative to the file
-import { Category } from '../types';
+import { PRODUCTS } from '../constants';
+import { Category, Product, ExhibitionType } from '../types';
 
-export const CatalogPage = () => {
+interface CatalogPageProps {
+    activeExhibition: ExhibitionType | 'ALL';
+    setActiveExhibition: (exhibition: ExhibitionType | 'ALL') => void;
+    filteredProducts: Product[];
+    openProduct: (product: Product) => void;
+    exhibitions: ExhibitionType[];
+}
+
+export const CatalogPage = ({
+    activeExhibition,
+    setActiveExhibition,
+    filteredProducts,
+    openProduct,
+    exhibitions
+}: CatalogPageProps) => {
     // 1. Define categories locally to avoid import errors
     const categories: { id: Category; label: string }[] = [
         { id: 'all', label: 'Все' },
@@ -17,7 +31,7 @@ export const CatalogPage = () => {
     const [activeCategory, setActiveCategory] = useState<Category>('all');
 
     // 3. Filter logic (Case-insensitive safety check)
-    const filteredProducts = products.filter((product) => {
+    const displayProducts = filteredProducts.filter((product) => {
         if (activeCategory === 'all') return true;
         return product.category.toLowerCase() === activeCategory.toLowerCase();
     });
@@ -53,8 +67,8 @@ export const CatalogPage = () => {
 
             {/* Product Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-                {filteredProducts.length > 0 ? (
-                    filteredProducts.map((product) => (
+                {displayProducts.length > 0 ? (
+                    displayProducts.map((product) => (
                         <div key={product.id} className="group cursor-pointer">
                             <div className="relative overflow-hidden aspect-[3/4] mb-4 bg-gray-200">
                                 <img

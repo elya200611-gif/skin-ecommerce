@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ShoppingBag, User, Search, Menu, X } from 'lucide-react';
+import { ExhibitionType } from '../types';
 
 // Define navigation items locally to avoid import dependency loops
 const NAV_ITEMS = [
@@ -10,7 +11,29 @@ const NAV_ITEMS = [
     { label: 'Gyaru', id: 'gyaru' },
 ];
 
-export const Header = () => {
+interface HeaderProps {
+    searchQuery: string;
+    setSearchQuery: (query: string) => void;
+    isSearchOpen: boolean;
+    setIsSearchOpen: (isOpen: boolean) => void;
+    cart: string[];
+    handleSearchSubmit: (e: React.FormEvent) => Promise<void>;
+    aiAdvice: { text: string; vibe: string } | null;
+    isAiLoading: boolean;
+    setActiveExhibition: (exhibition: ExhibitionType | 'ALL') => void;
+}
+
+const Header = ({
+    searchQuery,
+    setSearchQuery,
+    isSearchOpen,
+    setIsSearchOpen,
+    cart,
+    handleSearchSubmit,
+    aiAdvice,
+    isAiLoading,
+    setActiveExhibition
+}: HeaderProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
@@ -131,3 +154,5 @@ export const Header = () => {
         </header>
     );
 };
+
+export default Header;
