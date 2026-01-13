@@ -72,28 +72,28 @@ export const REVIEWS = [
   {
     id: 1,
     user: 'Аня К.',
-    image: '/clothes/1 review.webp',
+    image: '/1 review.webp',
     comment: 'Идеально село! Очень мягкая ткань',
     height: '155-165 см'
   },
   {
     id: 2,
     user: 'Миша Р.',
-    image: '/clothes/2 review.webp',
+    image: '/2 review.webp',
     comment: 'Крутой вайб, носил на концерт',
     height: '170-175 см'
   },
   {
     id: 3,
     user: 'Лиза П.',
-    image: '/clothes/3 review.webp',
+    image: '/3 review.webp',
     comment: 'Это то, что я искала! 🖤',
     height: '155-165 см'
   },
   {
     id: 4,
     user: 'Влад С.',
-    image: '/clothes/4 review.webp',
+    image: '/4 review.webp',
     comment: 'Качество на высоте, спасибо!',
     height: '180+ см'
   }
